@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html style="background-color:#101010;">
+
+   <head>
+      <style>
+         #mycanvas{
+            border:1px solid red;
+         }
+      </style>
+   </head>
+
+   <body>
+      <canvas id = "my_canvas" width="400" height="300"></canvas>
+   </body>
+
+   <script>
+      const Shapes=[
+         'Shapes/01.png',
+         'Shapes/02.png',
+         'Shapes/03.png',
+         'Shapes/04.png',
+         'Shapes/05.png',
+         'Shapes/06.png',
+         'Shapes/07.png',
+         'Shapes/08.png',
+         'Shapes/09.png'
+      ]
+
+      window.onload = function() {
+         var c = document.getElementById("my_canvas");
+         var ctx = c.getContext("2d");
+
+         for (let i = 0; i < 9; i++) {
+               const s = new Image(); 
+               s.src = Shapes[i];
+               s.addEventListener('load', () => {
+                     ctx.drawImage(s, 0, 0);
+            }, false);
+         }
+      };
+   </script>
+</html>
